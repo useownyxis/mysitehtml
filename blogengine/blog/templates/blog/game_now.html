@@ -1,0 +1,17 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block title %}
+  Game Now - {{ block.super }}
+{% endblock %}
+
+
+
+{% load static %}
+{% block content %}
+    <meta http-equiv="Refresh" content="30" />
+    {% for i in game_now.desk|make_list %}{% if i == '0' %}<img src="{% static 'images/black_empty.png' %}" alt="ч п" border="0" height="60" width="60" hspace="0" vspace="0">{% endif %}{% if i == '1' %}<img src="{% static 'images/white_empty.png' %}" alt="б п" border="0" height="60" width="60" hspace="0" vspace="0">{% endif %}{% if i == '2' %}<br>{% endif %}{% if i == '3' %}<img src="{% static 'images/blue_common_white.png' %}" alt="ч о" border="0" height="60" width="60" hspace="0" vspace="0">{% endif %}{% if i == '4' %}<img src="{% static 'images/blue_queen_white.png' %}" alt="ч д" border="0" height="60" width="60" hspace="0" vspace="0">{% endif %}{% if i == '5' %}<img src="{% static 'images/red_common_white.png' %}" alt="б о" border="0" height="60" width="60" hspace="0" vspace="0">{% endif %}{% if i == '6' %}<img src="{% static 'images/red_queen_white.png' %}" alt="б д" border="0" height="60" width="60" hspace="0" vspace="0">{% endif %}{% endfor %}
+
+
+
+
+{% endblock %}
